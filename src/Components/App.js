@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css';
+import MoleHole from './MoleHole';
 
 // state ={
 //   gameStart,
@@ -11,11 +12,12 @@ import './../App.css';
 
 class App extends Component {
   render() {
-    return (
-      <div>
-          <h1>Whack-a-mole!</h1>
-      </div>
-    
+    return (<div className="main">
+        <h1 className="title">Whack-a-mole!</h1>
+      <div className="board">
+        {[...Array(16)].map((item, i) => <MoleHole key={i} />)}
+      </div>  
+    </div>  
     );
   }
 }
